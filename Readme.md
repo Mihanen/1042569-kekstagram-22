@@ -1,7 +1,7 @@
 # Личный проект «Кекстаграм»
 
 * Студент: [Михаил Кольцов](https://up.htmlacademy.ru/javascript/22/user/1042569).
-* Наставник: `Неизвестно`.
+* Наставник: [Сергей Филоненко](https://htmlacademy.ru/profile/rewoop).
 
 ---
 
