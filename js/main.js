@@ -53,32 +53,32 @@ const getRandomArrayElement = (elements) => {
 
 const OBJECT_COUNT = 25;
 
-const makeComment = (index) =>{
+const makeComments = (index) =>{
   return {
     id: index + 1,
-    avatar: 'img/avatar-{{' + getRandomRange(1, 6) + '}}.svg',
+    avatar: 'img/avatar-' + getRandomRange(1, 6) + '.svg',
     name: NAMES[Math.floor(Math.random() * (NAMES.length-1))],
     message: MESSAGES[Math.floor(Math.random() * (MESSAGES.length-1))],
   };
 };
 
-const makeComments = new Array(getRandomRange(1, 3)).fill(null).map((comment, index) => makeComment(index));
+const comments = new Array(OBJECT_COUNT).fill(null).map((comment, index) => makeComments(index));
 
-const makeCommentList = (index) =>{
+const makePhotoList = (index) =>{
   return {
     id: index + 1,
     url: 'photos/'+ getRandomRange(1, 25) +'.jpg',
     description: DESCRIPTIONS[Math.floor(Math.random() * (DESCRIPTIONS.length-1))],
     likes: getRandomRange(15, 200),
-    comments: makeComments,
+    comments: comments[Math.floor(Math.random() * (MESSAGES.length-1))],
   };
 };
 
-const makeCommentLists = new Array(OBJECT_COUNT).fill(null).map((photo, index) => makeCommentList(index));
+const commentLists = new Array(OBJECT_COUNT).fill(null).map((photo, index) => makePhotoList(index));
 
 
 // eslint-disable-next-line no-console
-console.log(makeComments);
+console.log(comments);
 // eslint-disable-next-line no-console
-console.log(makeCommentLists);
+console.log(commentLists);
 
