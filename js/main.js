@@ -1,20 +1,15 @@
-// eslint-disable-next-line no-unused-vars
 const getRandomRange = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
-  if (min != max && min > 0 && min < max){
+  if (min !== max && min > 0 && min < max){
     return Math.floor(Math.random() * (max - min + 1)) + min;
   }
 };
-
-
 
 // eslint-disable-next-line no-unused-vars
 const getLineLength = (string, maxLineRange) => string.length < maxLineRange;
 // eslint-disable-next-line no-unused-vars
 const getRandomElement = Math.floor(Math.random( ) * 4)
-
-// eslint-disable-next-line no-unused-vars
 const NAMES = [
   'Иван',
   'Михаил',
@@ -36,7 +31,6 @@ const DESCRIPTIONS = [
   'Пейзаж',
   'Портрет',
 ];
-// eslint-disable-next-line no-unused-vars
 const MESSAGES = [
   'Всё отлично!',
   'В целом всё неплохо. Но не всё.',
@@ -62,7 +56,7 @@ const makeComments = (index) =>{
   };
 };
 
-const comments = new Array(OBJECT_COUNT).fill(null).map((comment, index) => makeComments(index));
+const comments = new Array(getRandomRange(1, 3)).fill(null).map((comment, index) => makeComments(index));
 
 const makePhotoList = (index) =>{
   return {
@@ -70,7 +64,7 @@ const makePhotoList = (index) =>{
     url: 'photos/'+ getRandomRange(1, 25) +'.jpg',
     description: DESCRIPTIONS[Math.floor(Math.random() * (DESCRIPTIONS.length-1))],
     likes: getRandomRange(15, 200),
-    comments: comments[Math.floor(Math.random() * (MESSAGES.length-1))],
+    comments: comments,
   };
 };
 
