@@ -1,3 +1,4 @@
+
 const getRandomRange = (min, max) => {
   min = Math.ceil(min);
   max = Math.floor(max);
@@ -75,4 +76,3 @@ const commentLists = new Array(OBJECT_COUNT).fill(null).map((photo, index) => ma
 console.log(comments);
 // eslint-disable-next-line no-console
 console.log(commentLists);
-
