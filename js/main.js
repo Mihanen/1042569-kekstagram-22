@@ -56,7 +56,7 @@ const makeComments = (index) =>{
   };
 };
 
-const comments = () => new Array(getRandomRange(1, 3)).fill(value: null).map((comment, index: number) => makeComments(index));
+const comments = () => new Array(getRandomRange(1, 3)).fill(null).map((comment, index) => makeComments(index));
 
 const makePhotoList = (index) =>{
   return {
@@ -64,7 +64,7 @@ const makePhotoList = (index) =>{
     url: 'photos/'+ getRandomRange(1, 25) +'.jpg',
     description: DESCRIPTIONS[Math.floor(Math.random() * (DESCRIPTIONS.length-1))],
     likes: getRandomRange(15, 200),
-    comments: comments,
+    comments: comments(),
   };
 };
 
