@@ -56,7 +56,7 @@ const makeComments = (index) =>{
   };
 };
 
-const comments = new Array(getRandomRange(1, 3)).fill(null).map((comment, index) => makeComments(index));
+const comments = () => new Array(getRandomRange(1, 3)).fill(value: null).map((comment, index: number) => makeComments(index));
 
 const makePhotoList = (index) =>{
   return {
