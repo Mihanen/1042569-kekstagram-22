@@ -35,6 +35,9 @@ const makePhotoList = (index) =>{
 // eslint-disable-next-line no-unused-vars
 const miniPictures = new Array(OBJECT_COUNT).fill(null).map((photo, index) => makePhotoList(index));
 
+const commentsCount= makeComment.length;
+
+
 export{miniPictures};
 export{getRandomRange};
-
+export{commentsCount};
