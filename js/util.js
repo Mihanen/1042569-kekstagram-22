@@ -11,7 +11,7 @@ const getRandomRange = (min, max) => {
   }
 };
 
-const makeComment = (index) =>{
+const makeComment = (index) => {
   return {
     id: index + 1,
     avatar: 'img/avatar-' + index + 1 + '.svg',
@@ -36,8 +36,5 @@ const makePhotoList = (index) =>{
 const miniPictures = new Array(OBJECT_COUNT).fill(null).map((photo, index) => makePhotoList(index));
 
 export{miniPictures};
-export{makePhotoList};
-export{makeComment};
+export{getRandomRange};
 
-// eslint-disable-next-line no-console
-console.log(makeComment);
