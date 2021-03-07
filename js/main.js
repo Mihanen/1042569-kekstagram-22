@@ -1,7 +1,4 @@
-import './util.js';
+import './utils.js';
 import './data.js';
-
-import {commentLists} from './util.js';
-
-// eslint-disable-next-line no-console
-console.log(commentLists);
+import './const.js';
+import './mini_pictures.js';
