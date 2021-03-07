@@ -20,7 +20,7 @@ const makeComment = (index) => {
   };
 };
 
-const getComments = () => new Array(getRandomRange(OBJECT_COUNT)).fill(null).map((comment, index) => makeComment(index));
+const getComments = () => new Array(getRandomRange(1, 25)).fill(null).map((comment, index) => makeComment(index));
 
 const makePhotoList = (index) =>{
   return {
@@ -35,9 +35,6 @@ const makePhotoList = (index) =>{
 // eslint-disable-next-line no-unused-vars
 const miniPictures = new Array(OBJECT_COUNT).fill(null).map((photo, index) => makePhotoList(index));
 
-const commentsCount= makeComment.length;
-
-
 export{miniPictures};
 export{getRandomRange};
-export{commentsCount};
+export{getComments};

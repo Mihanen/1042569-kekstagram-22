@@ -1,22 +1,18 @@
-import {miniPictures} from './util.js';
-import {commentsCount} from './util.js';
+import {miniPictures, getComments} from './utils.js';
 
-const miniPicturesItem = document.querySelector('.pictures');
-const miniPicturesTemplate = document.querySelector('#picture')
+const pictuesContainer = document.querySelector('.pictures');
+const miniPictureTemplate = document.querySelector('#picture')
   .content
   .querySelector('.picture');
 
-const makeMiniPicture = miniPictures;
-const similarListFragment = document.createDocumentFragment();
+const similarPhotos = document.createDocumentFragment();
 
-
-makeMiniPicture.forEach(({url, likes }) => {
-  const minPictureElement = miniPicturesTemplate.cloneNode(true);
+miniPictures.forEach(({url, likes }) => {
+  const minPictureElement = miniPictureTemplate.cloneNode(true);
   minPictureElement.querySelector('.picture__img').src = url;
-  minPictureElement.querySelector('.picture__comments').textContent = commentsCount;
+  minPictureElement.querySelector('.picture__comments').textContent = getComments().length;
   minPictureElement.querySelector('.picture__likes').textContent = likes;
-  similarListFragment.appendChild(minPictureElement);
+  similarPhotos.appendChild(minPictureElement);
 });
 
-miniPicturesItem.appendChild(similarListFragment);
-
+pictuesContainer.appendChild(similarPhotos);
